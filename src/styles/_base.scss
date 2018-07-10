@@ -1,21 +1,25 @@
 
 body{
-
+    font-family: 'Roboto','Microsoft JhengHei','Heiti TC', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
 }
 input:focus{
     outline: none;
 }
 .h1, h1{
-    
+    font-size: 48px;
+    font-weight: 300;
 }
 .h2, h2{
-  
+  font-size: 24px;
+  font-weight: 300;
 }
 .h3, h3{
 
 }
-.bold{
-    
+.label{
+    font-size: 14px;
 }
 
 
