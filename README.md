@@ -1,4 +1,4 @@
-> An simple form validate based on Vue.js 
+> A simple form validate based on Vue.js 
 
 ![Image](http://www.hannahpun.me/vue_listfilter/stage6.png)
 
