@@ -9,15 +9,8 @@
   <h2>Glad to see you here!</h2>
  
   <form class="form-wrapper">
-    <Inputs 
-      :type="'email'" 
-      :label="'Account'"/>
-    <Inputs 
-      :type="'password'" 
-      :label="'Password'"/>
-    <Inputs 
-      :type="'password'" 
-      :label="'Confirm Password'" />
+    <Inputs v-for="item in inputData1" :key="item.id"
+      :item="item"/>
     <Buttons />
   </form>
 </div>

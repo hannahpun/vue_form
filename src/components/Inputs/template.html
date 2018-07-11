@@ -1,7 +1,9 @@
 <div class="input">
   <div class="group">      
-    <input :type="type">
+    <input :type="item.type" v-validate="item.vuelidate" :name="item.name">
     <span class="bar"></span>
-    <label>{{label}}</label>
+    <label>{{item.label}}</label>
+    <span class="errorMsg" v-if="errors.items.length > 0"><i class="fas fa-exclamation-triangle"></i>{{ errors.first(item.name) }}</span>
   </div>
+  
 </div>

@@ -56,3 +56,14 @@ input:focus ~ label, input:valid ~ label {
 input:focus ~ .bar:before, input:focus ~ .bar:after {
   width:50%;
 }
+
+
+.errorMsg{
+  font-size: $f-label;
+  padding-top: 8px;
+  display: block;
+  color: $contrastColor;
+  i{
+    padding-right: 5px;
+  }
+}

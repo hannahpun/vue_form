@@ -6,8 +6,16 @@ export default {
       type: String,
       default: 'text'
     },
+    name: {
+      type: String,
+      default: null
+    },
     label: {
       type: String,
+      default: null
+    },
+    item: {
+      type: Object,
       default: null
     }
   }
