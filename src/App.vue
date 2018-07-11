@@ -11,10 +11,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
   width: 460px;
   padding: 50px 0;
   margin: 0 auto;
+  border-top: 5px solid $mainColor;
 }
 </style>

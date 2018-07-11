@@ -1,13 +1,3 @@
-* { box-sizing:border-box; }
-.form-wrapper{
-  padding-top: 40px;
-}
-.form{
-  h1,h2{
-    text-align: center;
-    line-height: 1.3;
-  }
-}
 .group { 
   position:relative; 
   margin-bottom:45px; 
@@ -21,8 +11,6 @@ input {
   border:none;
   border-bottom:1px solid #757575;
 }
-
-
 /* LABEL ======================================= */
 label 				 {
   color:#999; 
@@ -39,8 +27,8 @@ label 				 {
 /* active state */
 input:focus ~ label, input:valid ~ label {
   top:-20px;
-  font-size:14px;
-  color:#5264AE;
+  font-size:$f-label;
+  color:$mainColor;
 }
 
 
@@ -52,7 +40,7 @@ input:focus ~ label, input:valid ~ label {
   width:0;
   bottom:1px; 
   position:absolute;
-  background:#5264AE; 
+  background:$mainColor; 
   transition:0.2s ease all; 
   -moz-transition:0.2s ease all; 
   -webkit-transition:0.2s ease all;

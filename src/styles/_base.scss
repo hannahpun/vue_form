@@ -2,11 +2,12 @@
 body{
     font-family: 'Roboto','Microsoft JhengHei','Heiti TC', sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: $f-base;
 }
 input:focus{
     outline: none;
 }
+* { box-sizing:border-box; }
 .h1, h1{
     font-size: 48px;
     font-weight: 300;
@@ -19,7 +20,7 @@ input:focus{
 
 }
 .label{
-    font-size: 14px;
+    font-size: $f-label;
 }
 
 

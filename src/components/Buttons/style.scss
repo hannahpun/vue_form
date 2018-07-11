@@ -1,0 +1,18 @@
+/* BUTTONs ======================================= */
+.myBtn{
+  background-color: $mainColor;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 8px;
+  color: $w;
+  border-width: 0px;
+  display: block;
+  width: 100%;
+  font-size: $f-base;
+  &:hover{
+    background-color: darken($mainColor, 6);
+  }
+  &:disabled{
+    background-color: $subColor;
+  }
+}

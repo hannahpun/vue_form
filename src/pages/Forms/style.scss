@@ -1,0 +1,65 @@
+
+.form-wrapper{
+  padding-top: 45px;
+}
+.form{
+  h1,h2{
+    text-align: center;
+    line-height: 1.3;
+  }
+}
+
+
+/* STEPS ======================================= */
+.steps{
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 40px auto;
+}
+.step{
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid $subColor;
+  position: relative;
+  &::before{
+    content: "";
+    position: absolute;
+    width: 56px;
+    height: 2px;
+    background-color: $subColor;
+    left: 14px;
+    top: calc(50% - 2px);
+  }
+  &.is-done{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: $mainColor;
+    &::before{
+      background-color: $mainColor;
+    }
+  }
+  &.is-now{
+    border-color: $mainColor;
+    &::after{
+      content: "";
+      width: 75%;
+      height: 75%;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $mainColor;
+    }
+    
+  }
+  &:last-of-type{
+    &::before{
+      width: 0;
+    }
+  }
+}

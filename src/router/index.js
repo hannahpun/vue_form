@@ -8,8 +8,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Form',
-      component: () => import('@/pages/Form')
+      name: 'Forms',
+      component: () => import('@/pages/Forms')
     }
   ]
 })
