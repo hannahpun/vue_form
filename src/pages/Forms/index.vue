@@ -30,7 +30,7 @@ export default {
         name: 'username',
         label: 'Name',
         style: 'half',
-        vuelidate: 'alpha_spaces|min:3'
+        vuelidate: 'required'
       }, {
         type: 'number',
         name: 'phone',

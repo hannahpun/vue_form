@@ -11,7 +11,7 @@
         :item="item"/>
         <button class="myBtn" @click="nowStep=1">SUBMIT & NEXT</button>
     </div>
-    <div class="step-content" v-if="nowStep==1">
+    <div class="step-content" v-show="nowStep==1">
       <Inputs v-for="item in inputData2" :key="item.id"
           :item="item"/>
       <div class="group half"> 
