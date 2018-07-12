@@ -1,12 +1,15 @@
-<div class="input">
+<!-- <div class="input"> -->
   <div class="group" 
-    :class="{'error': errors.has(item.name)}"
-    @input="$emit('input', $event.target.value)">      
-    <input :class="{'valid': fields[item.name]&&fields[item.name].valid}" :type="item.type" v-validate="item.vuelidate" :name="item.name">
+    :class="{
+      'error': errors.has(item.name),
+      'half': item.style==='half'
+    }"
+    @input="$emit('input', $event.target.value)" >      
+    <input :class="{'valid': (fields[item.name]&&fields[item.name].valid) && (fields[item.name]&&fields[item.name].touched)} " :type="item.type" v-validate="item.vuelidate" :name="item.name" :placeholder="item.placeholder">
     <span class="bar"></span>
-    <label>{{item.label}}</label>
+    <label>{{item.label}}<span v-show="fields[item.name]&&fields[item.name].required == false">(Optional)</span></label> 
     <span class="errorMsg" v-show="errors.has(item.name)" ><i class="fas fa-exclamation-triangle"></i>{{ errors.first(item.name) }}</span>
-    <!-- ddd{{fields[item.name]&&fields[item.name].valid}} -->
+    <!-- ddd{{fields[item.name]}} -->
   </div>
   
-</div>
+<!-- </div> -->

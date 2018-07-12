@@ -4,7 +4,7 @@ body{
     font-weight: 400;
     font-size: $f-base;
 }
-input:focus{
+input:focus, select:focus{
     outline: none;
 }
 * { box-sizing:border-box; }
@@ -26,4 +26,8 @@ input:focus{
 
 a{
     
+}
+
+::placeholder{
+    color: $grey;
 }

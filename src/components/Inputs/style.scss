@@ -1,67 +1,6 @@
-.group { 
-  position:relative; 
-  margin-bottom:45px; 
-  width: 100%;
-}
-input {
-  font-size:20px;
-  padding:10px 10px 10px 5px;
-  display:block;
-  width:100%;
-  border:none;
-  border-bottom:1px solid #757575;
-  .error &{
-    border-color: $contrastColor;
-  }
-}
-/* LABEL ======================================= */
-label 				 {
-  color:#999; 
-  // font-size:18px;
-  position:absolute;
-  pointer-events:none;
-  left:5px;
-  top:10px;
-  transition:0.2s ease all; 
-  -moz-transition:0.2s ease all; 
-  -webkit-transition:0.2s ease all;
-}
-
-/* active state */
-input:focus ~ label, input.valid ~ label, .error label{
-  top: -20px;
-  font-size: $f-label;
-  color: $mainColor;
-   &{
-    // color: $contrastColor;
-  }
-}
 
 
-/* BOTTOM BARS ================================= */
-.bar 	{ position:relative; display:block; width:100%; top:1px;}
-.bar:before, .bar:after 	{
-  content:'';
-  height:2px; 
-  width:0;
-  bottom:1px; 
-  position:absolute;
-  background:$mainColor; 
-  transition:0.2s ease all; 
-  -moz-transition:0.2s ease all; 
-  -webkit-transition:0.2s ease all;
-}
-.bar:before {
-  left:50%;
-}
-.bar:after {
-  right:50%; 
-}
 
-/* active state */
-input:focus ~ .bar:before, input:focus ~ .bar:after {
-  width:50%;
-}
 
 
 .errorMsg{

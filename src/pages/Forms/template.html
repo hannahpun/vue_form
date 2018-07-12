@@ -15,9 +15,37 @@
       <Buttons />
     </div>
     <div class="step-content">
-      <Inputs v-for="item in inputData1" :key="item.id"
+      <Inputs v-for="item in inputData2" :key="item.id"
           :item="item"/>
+      <div class="group half"> 
+        <Selects />
+        <label>Address</label>
+      </div>
+      <div class="group half"> 
+        <Selects />
+      </div>
+      <div class="group"> 
+          <Inputs 
+            :item="inputDataAdd" />
+        </div>
       <Buttons />
+    </div>
+    <div class="step-content">
+        
+      <div class="card-wrapper"></div>
+      <section class="creditCard">
+          <Inputs v-for="item in inputData4" :key="item.id"
+          :item="item"/>
+          <!-- <div>
+            
+              <input type="text" name="number">
+              <input type="text" name="name"/>
+              <input type="text" name="expiry"/>
+              <input type="text" name="cvc"/>
+          </div> -->
+         
+      </section>
+      
     </div>
     
   </form>
