@@ -1,12 +1,9 @@
 <script>
 import Card from 'card'
 import Inputs from '@/components/Inputs'
-import Buttons from '@/components/Buttons'
+// import Buttons from '@/components/Buttons'
 import Selects from '@/components/Selects'
-
-
-// console.log(Card)
-
+import axios from 'axios'
 
 export default {
   name: 'forms',
@@ -76,22 +73,39 @@ export default {
         label: 'CVC',
         style: 'half',
         vuelidate: 'required'
-      }]
+      }],
+      city: '',
+      regions: ['xx區', 'oo區'],
+      nowStep: 0,
+      title: ['Create Account', 'General Infomation', 'Payment Method'],
+      subTitle: ['Glad to see you here!', 'Tell us who you are!', 'Add your credit card infomation!'],
     }
   },
-  mounted () {
-    const card = new Card({
-      form: '.creditCard',
-      container: '.card-wrapper',
-    //   placeholders: {
-    //     number: '**** **** **** ****',
-    //     name: 'Arya Stark',
-    //     expiry: '**/****',
-    //     cvc: '***'
-    // }
-    })
+  created () {
+    axios.get('/api/data/')
+      .then(res => {
+        this.city = res.data
+      })
+      .catch(error => {
+        console.log(error)
+      })
   },
-  components: {Inputs, Buttons, Selects}
+  mounted () {
+    // new Card({
+    //   form: '.creditCard',
+    //   container: '.card-wrapper'
+    // })
+  },
+  methods: {
+    nextStep(){
+      this.nowStep = 2;
+      new Card({
+        form: '.creditCard',
+        container: '.card-wrapper'
+      })
+    }
+  },
+  components: {Inputs, Selects}
 }
 </script>
 <template src="./template.html"></template>

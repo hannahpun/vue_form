@@ -1,52 +1,41 @@
 <div class="form">
   <div class="steps">
-    <div class="step is-done"><i class="fas fa-check-circle"></i></div>
-    <div class="step is-now"></div>
-    <div class="step"></div>
-    <div class="step"></div>
+    <!-- <div class="step is-now"is-done"><i class="fas fa-check-circle"></i></div> -->
+    <div v-for="(item, index) in title" class="step" :class="{'is-now': nowStep==index, 'is-done':index < nowStep}"><i v-show="index < nowStep" class="fas fa-check-circle" @click="nowStep=index"></i></div>
   </div>
-  <h1>Create Account</h1>
-  <h2>Glad to see you here!</h2>
- 
-  <form class="form-wrapper">
-    <div class="step-content">
+  <h1>{{title[nowStep]}}</h1>
+  <h2>{{subTitle[nowStep]}}</h2>
+  <div class="form-wrapper">
+    <div class="step-content" v-if="nowStep==0">
       <Inputs v-for="item in inputData1" :key="item.id"
         :item="item"/>
-      <Buttons />
+        <button class="myBtn" @click="nowStep=1">SUBMIT & NEXT</button>
     </div>
-    <div class="step-content">
+    <div class="step-content" v-if="nowStep==1">
       <Inputs v-for="item in inputData2" :key="item.id"
           :item="item"/>
       <div class="group half"> 
-        <Selects />
+        <Selects :options="city"/>
         <label>Address</label>
       </div>
       <div class="group half"> 
-        <Selects />
+        <Selects :options="regions"/>
       </div>
       <div class="group"> 
           <Inputs 
             :item="inputDataAdd" />
         </div>
-      <Buttons />
+        <button class="myBtn" @click="nextStep()">SUBMIT & NEXT</button>
     </div>
-    <div class="step-content">
+    <div class="step-content" v-show="nowStep==2">
         
       <div class="card-wrapper"></div>
       <section class="creditCard">
           <Inputs v-for="item in inputData4" :key="item.id"
           :item="item"/>
-          <!-- <div>
-            
-              <input type="text" name="number">
-              <input type="text" name="name"/>
-              <input type="text" name="expiry"/>
-              <input type="text" name="cvc"/>
-          </div> -->
-         
       </section>
-      
+      <button class="myBtn">Done</button>
     </div>
     
-  </form>
+  </div>
 </div>

@@ -1,6 +1,12 @@
 <script>
 export default {
-  name: 'selects'
+  name: 'selects',
+  props: {
+    options: {
+      type: [Array, String],
+      default: null
+    }
+  }
 }
 </script>
 

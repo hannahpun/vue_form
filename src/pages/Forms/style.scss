@@ -35,7 +35,8 @@
   &::before{
     content: "";
     position: absolute;
-    width: 56px;
+    // width: 56px;
+    width: 92px;
     height: 2px;
     background-color: $subColor;
     left: 14px;

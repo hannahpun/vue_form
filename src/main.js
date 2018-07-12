@@ -4,10 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VeeValidate from 'vee-validate'
-
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 import './styles/application.scss'
 
 Vue.config.productionTip = false
+Vue.use(VueAxios, axios)
 Vue.use(VeeValidate)
 
 /* eslint-disable no-new */
