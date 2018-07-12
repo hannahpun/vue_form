@@ -1,9 +1,12 @@
 <div class="input">
-  <div class="group">      
-    <input :type="item.type" v-validate="item.vuelidate" :name="item.name">
+  <div class="group" 
+    :class="{'error': errors.has(item.name)}"
+    @input="$emit('input', $event.target.value)">      
+    <input :class="{'valid': fields[item.name]&&fields[item.name].valid}" :type="item.type" v-validate="item.vuelidate" :name="item.name">
     <span class="bar"></span>
     <label>{{item.label}}</label>
-    <span class="errorMsg" v-if="errors.items.length > 0"><i class="fas fa-exclamation-triangle"></i>{{ errors.first(item.name) }}</span>
+    <span class="errorMsg" v-show="errors.has(item.name)" ><i class="fas fa-exclamation-triangle"></i>{{ errors.first(item.name) }}</span>
+    <!-- ddd{{fields[item.name]&&fields[item.name].valid}} -->
   </div>
   
 </div>

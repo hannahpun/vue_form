@@ -5,22 +5,21 @@ export default {
   name: 'forms',
   data() {
     return {
-      inputData1:[{
+      inputData1: [{
         type: 'text',
         name: 'account',
         label: 'Account',
-        vuelidate: "required|email"
-      },
-      {
+        vuelidate: 'required|email'
+      }, {
         type: 'password',
         name: 'pw',
         label: 'Password',
-        vuelidate: "required|min:8|alpha"
-      },{
+        vuelidate: 'required|min:8'
+      }, {
         type: 'password',
         name: 'confirmpPw',
         label: 'Confirm Password',
-        vuelidate: "required|email"
+        vuelidate: 'required|confirmed:pw'
       }]
     }
   },

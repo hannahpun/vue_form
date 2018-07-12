@@ -1,4 +1,5 @@
 <script>
+// import { mapFields } from 'vee-validate'
 export default {
   name: 'inputs',
   props: {

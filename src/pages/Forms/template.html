@@ -9,8 +9,16 @@
   <h2>Glad to see you here!</h2>
  
   <form class="form-wrapper">
-    <Inputs v-for="item in inputData1" :key="item.id"
-      :item="item"/>
-    <Buttons />
+    <div class="step-content">
+      <Inputs v-for="item in inputData1" :key="item.id"
+        :item="item"/>
+      <Buttons />
+    </div>
+    <div class="step-content">
+      <Inputs v-for="item in inputData1" :key="item.id"
+          :item="item"/>
+      <Buttons />
+    </div>
+    
   </form>
 </div>
