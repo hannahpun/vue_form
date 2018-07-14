@@ -97,4 +97,9 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
   &:disabled{
     background-color: $subColor;
   }
+  &.btnBorder{
+    color: $mainColor;
+    border: 1px solid $mainColor;
+    background-color: transparent;
+  }
 }

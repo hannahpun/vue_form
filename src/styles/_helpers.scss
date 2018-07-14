@@ -1,6 +1,6 @@
 // breakpoint
 $desktop: 1200px;
-$pad: 768px;
+$pad: 500px;
 
 @mixin desktop() {
   @media (min-width: $desktop) {

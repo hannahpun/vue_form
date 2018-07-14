@@ -9,6 +9,7 @@ export default {
   name: 'forms',
   data() {
     return {
+      imagesList: [],
       inputData1: [{
         type: 'text',
         name: 'account',
@@ -77,8 +78,8 @@ export default {
       city: '',
       regions: ['xx區', 'oo區'],
       nowStep: 0,
-      title: ['Create Account', 'General Infomation', 'Payment Method'],
-      subTitle: ['Glad to see you here!', 'Tell us who you are!', 'Add your credit card infomation!'],
+      title: ['Create Account', 'General Infomation', 'ffffion',  'Payment Method'],
+      subTitle: ['Glad to see you here!', 'Tell us who you are!','fffff',  'Add your credit card infomation!']
     }
   },
   created () {
@@ -97,8 +98,24 @@ export default {
     // })
   },
   methods: {
-    nextStep(){
-      this.nowStep = 2;
+    uploadFile (e) {
+      // console.log(e.target.files[0])
+      var fileInput = document.getElementById('fileInput');
+      // var files = e.target.files //fileList Obj
+    
+      //FileReader
+      var vm = this;
+      var reader = new FileReader();
+      //當讀取完時
+      reader.onload = () => {
+          vm.imagesList.push(reader.result)
+          console.log(reader.result)
+      }
+      //讀取檔案並以 URL 格式存放
+      reader.readAsDataURL(e.target.files[0])
+    },
+    nextStep() {
+      this.nowStep = 2
       new Card({
         form: '.creditCard',
         container: '.card-wrapper'
