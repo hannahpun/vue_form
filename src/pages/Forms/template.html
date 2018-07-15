@@ -35,7 +35,7 @@
             <h2>UPLOAD UP TO 3 PHOTOS</h2>
             <p class="label">MAXIMUM SIZE: 150*150px</p>
           </div>
-          <input class="file-upload-input"  type='file' multiple @change="readmultifiles" />
+          <input class="file-upload-input"  type='file' multiple @change="readmultifiles" accept="image/*"/>
         </div>
         <div class="uploadImg-wrapper">
             <div class="uploadImg" v-for="item in imagesList">
