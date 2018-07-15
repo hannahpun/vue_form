@@ -11,24 +11,7 @@
         :item="item"/>
         <button class="myBtn" @click="nowStep=1">SUBMIT & NEXT</button>
     </div>
-    <div class="step-content" v-if="nowStep==0">
-          <div class="myBtn btnBorder">
-          <i class="far fa-images"></i>
-            <div class="content">
-              <h2>UPLOAD UP TO 3 PHOTOS</h2>
-              <p class="label">MAXIMUM SIZE: 150*150px</p>
-            </div>
-            <input class="file-upload-input" id="fileInput" type='file' multiple @change="uploadFile" />
-          </div>
-          <div class="uploadImg-wrapper">
-              <div class="uploadImg" v-for="item in imagesList">
-                  <img :src="item" alt="">
-              </div>
-          </div>
-          
-          <!-- <img src=""  alt=""> -->
-          <button class="myBtn" @click="nowStep=1">SUBMIT & NEXT</button>
-      </div>
+    
     <div class="step-content" v-show="nowStep==1">
       <Inputs v-for="item in inputData2" :key="item.id"
           :item="item"/>
@@ -45,7 +28,26 @@
         </div>
         <button class="myBtn" @click="nextStep(e)">SUBMIT & NEXT</button>
     </div>
-    <div class="step-content" v-show="nowStep==2">
+    <div class="step-content" v-if="nowStep==2">
+        <div class="myBtn btnBorder">
+        <i class="far fa-images"></i>
+          <div class="content">
+            <h2>UPLOAD UP TO 3 PHOTOS</h2>
+            <p class="label">MAXIMUM SIZE: 150*150px</p>
+          </div>
+          <input class="file-upload-input"  type='file' multiple @change="readmultifiles" />
+        </div>
+        <div class="uploadImg-wrapper">
+            <div class="uploadImg" v-for="item in imagesList">
+                <img :src="imagesList && item" alt="">
+            </div>
+            <!-- <pre>{{imagesList && imagesList}}</pre> -->
+        </div>
+        
+        <!-- <img src=""  alt=""> -->
+        <button class="myBtn" @click="nowStep=3">SUBMIT & NEXT</button>
+    </div>
+    <div class="step-content" v-show="nowStep==3">
         
       <div class="card-wrapper"></div>
       <section class="creditCard">

@@ -78,8 +78,8 @@ export default {
       city: '',
       regions: ['xx區', 'oo區'],
       nowStep: 0,
-      title: ['Create Account', 'General Infomation', 'ffffion',  'Payment Method'],
-      subTitle: ['Glad to see you here!', 'Tell us who you are!','fffff',  'Add your credit card infomation!']
+      title: ['Create Account', 'General Infomation', 'Update Profile Picture',  'Payment Method'],
+      subTitle: ['Glad to see you here!', 'Tell us who you are!','We wanna know you more!',  'Add your credit card infomation!']
     }
   },
   created () {
@@ -98,21 +98,38 @@ export default {
     // })
   },
   methods: {
-    uploadFile (e) {
-      // console.log(e.target.files[0])
-      var fileInput = document.getElementById('fileInput');
-      // var files = e.target.files //fileList Obj
-    
-      //FileReader
+    readmultifiles (e) {
+      var files = e.target.files //fileList Obj
+      // console.log(e.target.files)
       var vm = this;
-      var reader = new FileReader();
-      //當讀取完時
-      reader.onload = () => {
-          vm.imagesList.push(reader.result)
-          console.log(reader.result)
+      var reader = new FileReader();  
+      function readFile(index) {
+        if( index >= files.length || index > 2) return;
+        var file = files[index];
+        reader.onload = function(e) {  
+          // get file content  
+          // var bin = e.target.result;
+          
+          vm.imagesList.push(e.target.result)
+          // debugger;
+          // do sth with bin
+          readFile(index+1)
+        }
+        reader.readAsDataURL(file);
       }
-      //讀取檔案並以 URL 格式存放
-      reader.readAsDataURL(e.target.files[0])
+      readFile(0);
+
+      // console.log('dddd', vm.imagesList)
+      //FileReader
+      // var vm = this;
+      // var reader = new FileReader();
+      // //當讀取完時
+      // reader.onload = () => {
+      //     vm.imagesList.push(reader.result)
+      //     console.log(reader.result)
+      // }
+      // //讀取檔案並以 URL 格式存放
+      // reader.readAsDataURL(e.target.files[0])
     },
     nextStep() {
       this.nowStep = 2

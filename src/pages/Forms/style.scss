@@ -22,8 +22,12 @@
   opacity: 0;
   cursor: pointer;
  }
+ .content{
+   padding-left: 15px;
+ }
  h2{
    padding-bottom: 4px;
+   text-align: left !important;
  }
  i{
    font-size: 50px;
@@ -57,8 +61,8 @@
   &::before{
     content: "";
     position: absolute;
-    // width: 56px;
-    width: 92px;
+    width: 56px;
+    // width: 92px;
     height: 2px;
     background-color: $subColor;
     left: 14px;
@@ -105,9 +109,13 @@
 .uploadImg-wrapper{
   display: flex;
   margin-bottom: 40px;
+  
 }
 .uploadImg{
   border-radius: 8px;
+  max-width: 140px;
+  margin: 0 5px;
+  align-self: center;
   // height: 140px;
   overflow: hidden;
   flex: 1;
